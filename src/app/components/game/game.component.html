@@ -1,0 +1,17 @@
+
+<div class="header">
+  <button class="restart-button" (click)="restartGame()">Restart</button>
+  <div class="theme-selection">
+    <button (click)="changeTheme(theme.Light)">Light</button>
+    <button (click)="changeTheme(theme.Dark)">Dark</button>
+  </div>
+  <div class="language-selection">
+    <button (click)="changeLanguage('uk')">Українська</button>
+    <button (click)="changeLanguage('en')">English</button>
+  </div>
+</div>
+
+<div class="terminal" #terminal>
+  <pre class="output">{{ output }}</pre>
+  <div *ngFor="let option of options" class="option" (click)="processCommand(option)">{{ option | capitalize }}</div>
+</div>

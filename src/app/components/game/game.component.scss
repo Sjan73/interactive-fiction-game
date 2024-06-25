@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 640px;
+  margin: 0 auto;
+}
+
+.terminal {
+  background-color: #1e1e1e;
+  color: #00ff00;
+  font-family: monospace;
+  padding: 20px;
+  border-radius: 5px;
+  width: 600px;
+  height: 400px;
+  overflow-y: auto;
+  margin: 30px auto 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+}
+
+.option {
+  background-color: #333;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.option:hover {
+  background-color: #444;
+}
+
+.restart-button,
+.language-selection button,
+.theme-selection button {
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.restart-button:hover,
+.language-selection button:hover,
+.theme-selection button:hover {
+  background-color: #333;
+}
+
+.language-selection button,
+.theme-selection button {
+  margin-right: 5px;
+}
+
+.options button {
+  display: block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #0f0;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

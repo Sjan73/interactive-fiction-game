@@ -1,0 +1,342 @@
+{
+  "initialScene": "louvre",
+  "scenes": {
+    "louvre": {
+      "story": "You find yourself in the grand hall of the Louvre, surrounded by masterpieces of art. The curator's body lies on the floor, surrounded by cryptic symbols that seem to be part of a larger puzzle. You notice doors to the north and east.",
+      "options": [
+        "examine the body",
+        "decode the symbols",
+        "head north",
+        "head east"
+      ],
+      "responses": {
+        "examine the body": {
+          "newScene": "louvre_inspectedBody",
+          "response": "You find a cryptic note in the curator's hand, with a numerical code."
+        },
+        "decode the symbols": {
+          "newScene": "louvre_inspectedSymbols",
+          "response": "The symbols seem to be a message in an ancient language. You're not sure what it means, but it looks important."
+        },
+        "head north": {
+          "newScene": "statueRoom",
+          "response": "You enter a room filled with ancient statues, their eyes seeming to watch you."
+        },
+        "head east": {
+          "newScene": "eastWing",
+          "response": "You enter a long corridor, lined with paintings and tapestries. You notice a door at the end of the hall."
+        }
+      }
+    },
+    "louvre_inspectedBody": {
+      "story": "You've examined the body and found the cryptic note. You still need to decode the symbols and find a way out of the room.",
+      "options": [
+        "decode the symbols",
+        "head north",
+        "head east"
+      ],
+      "responses": {
+        "decode the symbols": {
+          "newScene": "louvre_body_symbols",
+          "response": "You finally crack the code, and the symbols reveal a hidden message."
+        },
+        "head north": {
+          "newScene": "statueRoom",
+          "response": "You enter a room filled with ancient statues, their eyes seeming to watch you."
+        },
+        "head east": {
+          "newScene": "eastWing",
+          "response": "You enter a long corridor, lined with paintings and tapestries. You notice a door at the end of the hall."
+        }
+      }
+    },
+    "louvre_inspectedSymbols": {
+      "story": "You've decoded the symbols, but you're not sure what they mean. You still need to find a way out of the room.",
+      "options": [
+        "examine the body",
+        "head north",
+        "head east"
+      ],
+      "responses": {
+        "examine the body": {
+          "newScene": "louvre_body_symbols",
+          "response": "You find a hidden compartment in the curator's pocket, containing a small key."
+        },
+        "head north": {
+          "newScene": "statueRoom",
+          "response": "You enter a room filled with ancient statues, their eyes seeming to watch you."
+        },
+        "head east": {
+          "newScene": "eastWing",
+          "response": "You enter a long corridor, lined with paintings and tapestries. You notice a door at the end of the hall."
+        }
+      }
+    },
+    "louvre_body_symbols": {
+      "story": "You've examined the body and decoded the symbols. You find a hidden message that reads: 'The answer lies in the east wing'.",
+      "options": [
+        "head east",
+        "head north",
+        "examine the body further"
+      ],
+      "responses": {
+        "head east": {
+          "newScene": "eastWing",
+          "response": "You enter a long corridor, lined with paintings and tapestries. You notice a door at the end of the hall."
+        },
+        "head north": {
+          "newScene": "statueRoom",
+          "response": "You enter a room filled with ancient statues, their eyes seeming to watch you."
+        },
+        "examine the body further": {
+          "newScene": "louvre_body_symbols",
+          "response": "You examine the body further, but don't find anything else of interest."
+        }
+      }
+    },
+    "eastWing": {
+      "story": "You enter a long corridor, lined with paintings and tapestries. You notice a door at the end of the hall.",
+      "options": [
+        "approach the door",
+        "examine the paintings",
+        "search the corridor"
+      ],
+      "responses": {
+        "approach the door": {
+          "newScene": "eastWingDoor",
+          "response": "You approach the door and find itlocked. You notice a small keyhole."
+        },
+        "examine the paintings": {
+          "newScene": "eastWing_paintings",
+          "response": "You examine the paintings and notice a small, hidden compartment in one of the frames."
+        },
+        "search the corridor": {
+          "newScene": "eastWing_search",
+          "response": "You search the corridor and find a small, hidden key."
+        }
+      }
+    },
+    "eastWingDoor": {
+      "story": "You approach the door and find it locked. You notice a small keyhole.",
+      "options": [
+        "use the key",
+        "search further"
+      ],
+      "responses": {
+        "use the key": {
+          "newScene": "eastWingChamber",
+          "response": "You unlock the door and enter a grand chamber filled with treasure."
+        },
+        "search further": {
+          "newScene": "eastWing_search",
+          "response": "You search the corridor and find a small, hidden key."
+        }
+      }
+    },
+    "eastWing_paintings": {
+      "story": "You examine the paintings and notice a small, hidden compartment in one of the frames.",
+      "options": [
+        "open the compartment",
+        "approach the door",
+        "search the corridor"
+      ],
+      "responses": {
+        "open the compartment": {
+          "newScene": "eastWing_compartment",
+          "response": "You open the compartment and find a small, cryptic note."
+        },
+        "approach the door": {
+          "newScene": "eastWingDoor",
+          "response": "You approach the door and find it locked. You notice a small keyhole."
+        },
+        "search the corridor": {
+          "newScene": "eastWing_search",
+          "response": "You search the corridor and find a small, hidden key."
+        }
+      }
+    },
+    "eastWing_search": {
+      "story": "You search the corridor and find a small, hidden key.",
+      "options": [
+        "use the key",
+        "approach the door",
+        "examine the paintings"
+      ],
+      "responses": {
+        "use the key": {
+          "newScene": "eastWingChamber",
+          "response": "You unlock the door and enter a grand chamber filled with treasure."
+        },
+        "approach the door": {
+          "newScene": "eastWingDoor",
+          "response": "You approach the door and find it locked. You notice a small keyhole."
+        },
+        "examine the paintings": {
+          "newScene": "eastWing_paintings",
+          "response": "You examine the paintings and notice a small, hidden compartment in one of the frames."
+        }
+      }
+    },
+    "eastWingChamber": {
+      "story": "You unlock the door and enter a grand chamber filled with treasure.",
+      "options": [
+        "examine the treasure",
+        "search the chamber"
+      ],
+      "responses": {
+        "examine the treasure": {
+          "newScene": "eastWingTreasure",
+          "response": "You examine the treasure and find a small, hidden note."
+        },
+        "search the chamber": {
+          "newScene": "eastWingChamber_search",
+          "response": "You search the chamber and find a small, hidden door."
+        }
+      }
+    },
+    "eastWingTreasure": {
+      "story": "You examine the treasure and find a small, hidden note.",
+      "options": [
+        "read the note",
+        "search the chamber"
+      ],
+      "responses": {
+        "read the note": {
+          "newScene": "eastWing_note",
+          "response": "You read the note and find a cryptic message."
+        },
+        "search the chamber": {
+          "newScene": "eastWingChamber_search",
+          "response": "You search the chamber and find a small, hidden door."
+        }
+      }
+    },
+    "eastWingChamber_search": {
+      "story": "You search the chamber and find a small, hidden door.",
+      "options": [
+        "open the door",
+        "examine the treasure"
+      ],
+      "responses": {
+        "open the door": {
+          "newScene": "badEnding",
+          "response": "You open the door and find yourself trapped in a small room with no exit."
+        },
+        "examine the treasure": {
+          "newScene": "eastWingTreasure",
+          "response": "You examine the treasure and find a small, hidden note."
+        }
+      }
+    },
+    "eastWing_note": {
+      "story": "You read the note and find a cryptic message.",
+      "options": [
+        "decode the message",
+        "search the chamber"
+      ],
+      "responses": {
+        "decode the message": {
+          "newScene": "eastWing_decoded",
+          "response": "You decode the message and find a hidden clue."
+        },
+        "search the chamber": {
+          "newScene": "eastWingChamber_search",
+          "response": "You search the chamber and find a small, hidden door."
+        }
+      }
+    },
+    "eastWing_decoded": {
+      "story": "You decode the message and find a hidden clue.",
+      "options": [
+        "follow the clue",
+        "search the chamber"
+      ],
+      "responses": {
+        "follow the clue": {
+          "newScene": "goodEnding",
+          "response": "You follow the clue and find a hidden exit, leading you to freedom."
+        },
+        "search the chamber": {
+          "newScene": "eastWingChamber_search",
+          "response": "You search the chamber and find a small, hidden door."
+        }
+      }
+    },
+    "statueRoom": {
+      "story": "You enter a room filled with ancient statues, their eyes seeming to watch you.",
+      "options": [
+        "examine the statues",
+        "head back"
+      ],
+      "responses": {
+        "examine the statues": {
+          "newScene": "statueRoom_inspected",
+          "response": "You examine the statues and notice a small, hidden compartment in one of the pedestals."
+        },
+        "head back": {
+          "newScene": "louvre",
+          "response": "You head back to the grand hall of the Louvre."
+        }
+      }
+    },
+    "statueRoom_inspected": {
+      "story": "You examine the statues and notice a small, hidden compartment in one of the pedestals.",
+      "options": [
+        "open the compartment",
+        "head back"
+      ],
+      "responses": {
+        "open the compartment": {
+          "newScene": "statueRoom_compartment",
+          "response": "You open the compartment and find a small, cryptic note."
+        },
+        "head back": {
+          "newScene": "louvre",
+          "response": "You head back to the grand hall of the Louvre."
+        }
+      }
+    },
+    "statueRoom_compartment": {
+      "story": "You open the compartment and find a small, cryptic note.",
+      "options": [
+        "decode the note",
+        "head back"
+      ],
+      "responses": {
+        "decode the note": {
+          "newScene": "statueRoom_decoded",
+          "response": "You decode the note and find a hidden clue."
+        },
+        "head back": {
+          "newScene": "louvre",
+          "response": "You head back to the grand hall of the Louvre."
+        }
+      }
+    },
+    "statueRoom_decoded": {
+      "story": "You decode the note and find a hidden clue.",
+      "options": [
+        "follow the clue",
+        "head back"
+      ],
+      "responses": {
+        "follow the clue": {
+          "newScene": "goodEnding",
+          "response": "You follow the clue and find a hidden exit, leading you to freedom."
+        },
+        "head back": {
+          "newScene": "louvre",
+          "response": "You head back to the grand hall of the Louvre."
+        }
+      }
+    },
+    "badEnding": {
+      "story": "You wait for rescue, but no one comes. You're trapped forever. Game over.",
+      "response": ""
+    },
+    "goodEnding": {
+      "story": "You leave the museum, feeling relieved and triumphant. Congratulations, you've won the game!",
+      "response": ""
+    }
+  }
+}
